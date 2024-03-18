@@ -21,8 +21,8 @@ What I did is in libshortcutsign, I hook these internal function calls by after 
 
 Not much, but something is still something. I found that when extracting and decrypting contact signed shortcuts, there are 4 noticable segments called in the read calls:
 
-Segment 1 - 12 byte header, not encrypted. Contains `AEA1` as well as the size of the AEA context.
-Segment 2 - Also not encrypted. Contains the AEA context; looks like it may also contain some other info but I have no idea what it represents...
-Segment 3 - The main AEA encrypted shortcut. The result of the `aeaInputStreamRead` call is an Apple Archive (not encrypted) of it.
-Segment 4 - Encrypted, I have absolutely no idea what it is.
+* Segment 1 - 12 byte header, not encrypted. Contains `AEA1` as well as the size of the AEA context.
+* Segment 2 - Also not encrypted. Contains the AEA context; looks like it may also contain some other info but I have no idea what it represents...
+* Segment 3 - The main AEA encrypted shortcut. The result of the `aeaInputStreamRead` call is an Apple Archive (not encrypted) of it.
+* Segment 4 - Encrypted, I have absolutely no idea what it is.
 
